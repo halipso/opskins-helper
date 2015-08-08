@@ -61,7 +61,7 @@ $(document).bind('DOMSubtreeModified',function(){
 	                $(item).find('td:first').after('<td style="width:15%;"></td>');
 	            }
  		});
-	} if ($('.shop-sales').length == 0 && toggle) {
+	} else if ($('.shop-sales').length == 0 && toggle) {
 		toggle = 0;
 	}
 });
