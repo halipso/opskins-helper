@@ -37,34 +37,31 @@ $(document).ready(function(e){
     });
 });
 
-
-
 $(document).bind('DOMSubtreeModified',function(){
 	if($('.shop-sales').length > 0 && !toggle) {
- 		toggle = 1;
- 		var table = $('.shop-sales').closest('table');
-        table.find('thead > tr > th:first').after("<th>Edit price</td>");
-        table.find('.shop-sales').find('tr').each(function(key,item){
-            if($(item).hasClass('active')) {
-                $(item).find('td:first').after('<td style="width:15%;"><div class="input-group"> <input type="text" class="form-control" aria-label="Text input with segmented button dropdown">\
-                <div class="input-group-btn">\
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\
-                <span class="caret"></span>\
-                <span class="sr-only">Toggle Dropdown</span>\
-                </button>\
-                <ul class="dropdown-menu dropdown-menu-right">\
-                <li><a class="minPrice" href="javascript:void(0)">Get min. price</a></li>\
-                </ul>\
-                <button type="button" class="savePrice btn btn-default">Save</button>\
-                </div>\
-                </div></td>');
-                var itemname = $(item).find('td:first').text();
-            } else {
-                $(item).find('td:first').after('<td style="width:15%;"></td>');
-            }
+	 	toggle = 1;
+	 	var table = $('.shop-sales').closest('table');
+	        table.find('thead > tr > th:first').after("<th>Edit price</td>");
+	        table.find('.shop-sales').find('tr').each(function(key,item){
+	            if($(item).hasClass('active')) {
+	                $(item).find('td:first').after('<td style="width:15%;"><div class="input-group"> <input type="text" class="form-control" aria-label="Text input with segmented button dropdown">\
+	                <div class="input-group-btn">\
+	                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\
+	                <span class="caret"></span>\
+	                <span class="sr-only">Toggle Dropdown</span>\
+	                </button>\
+	                <ul class="dropdown-menu dropdown-menu-right">\
+	                <li><a class="minPrice" href="javascript:void(0)">Get min. price</a></li>\
+	                </ul>\
+	                <button type="button" class="savePrice btn btn-default">Save</button>\
+	                </div>\
+	                </div></td>');
+	                var itemname = $(item).find('td:first').text();
+	            } else {
+	                $(item).find('td:first').after('<td style="width:15%;"></td>');
+	            }
  		});
 	} if ($('.shop-sales').length == 0 && toggle) {
 		toggle = 0;
 	}
-
 });
